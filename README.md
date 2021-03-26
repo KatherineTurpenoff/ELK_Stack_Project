@@ -153,4 +153,4 @@ The following commands will run each playbook:
   - ansible-playbook filebeat-playbook.yml
   - ansible-playbook metricbeat-playbook.yml
 
-- After running each playbook, navigate to http://<Elk-Server PublicIP>:5601/app/kibana to check that the installation worked as expected. 
+After running each playbook, navigate to http://<Elk-Server PublicIP>:5601/app/kibana to check that the installation worked as expected. 
