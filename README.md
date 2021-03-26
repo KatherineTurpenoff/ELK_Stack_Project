@@ -24,7 +24,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
 
 - The load balancer protects the network from DDoS attacks by distributing traffic evenly amongst the virtual machines. 
-- The Jump Box is the single point of access within the network that is only available to the administrator. Additionally, a single point of access is easier to monitor for potential attacks.
+- The Jump Box is a single point of access within the network that is only available to the administrator. Additionally, a single point of access is easier to monitor for potential attacks.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file system and system metrics.
 
