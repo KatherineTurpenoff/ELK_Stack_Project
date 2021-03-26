@@ -137,13 +137,13 @@ Example below:
 
 - nano filebeat-config.yml 
 
-You can use the keyboard command control+w to search for the key words "output.elasticsearch" and "setup.kibana":
+You can use the keyboard command 'control+w' to search for the key words "output.elasticsearch" and "setup.kibana":
 
-Elasticsearch Example:
+- Elasticsearch Example:
 
   hosts: ["10.1.0.5:9200"]
   
- Kibana Example:
+- Kibana Example:
   
 setup.kibana:
   
