@@ -130,7 +130,7 @@ SSH into the control node and follow the steps below:
 Example below:
 
 nano filebeat-config.yml 
-Starting at line #1106 and #1806 edit the following:
+You can use the keyboard command control+w to search for the key words "output.elasticsearch" and "setup.kibana":
 
 #-------------------------- Elasticsearch output -------------------------------
 output.elasticsearch:
