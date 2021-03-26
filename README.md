@@ -51,7 +51,7 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 
 Machines within the network can only be accessed by the Jump Box VM.
 
-- The Jump Box machine, with IP 10.0.0.4, has access to every machine within the network, including the ELK sever.
+- The Jump Box machine, with private IP 10.0.0.4, has access to every machine within the network, including the ELK sever.
 
 A summary of the access policies in place can be found in the table below.
 
