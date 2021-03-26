@@ -64,7 +64,8 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- The automated configuration is advantagious because it minimalizes the chance of errors and is more timely. Going forward, the preconfigured files can also be easily edited with future updates.
+
+- The automated configuration is ideal because it minimalizes the chance of errors and impliments the configuration at a faster pace. Going forward, the preconfigured files can also be easily edited with future updates.
 
 The playbook implements the following tasks:
 - First Task: install docker.io
