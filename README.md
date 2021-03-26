@@ -46,9 +46,11 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+
 - The administrator's personal IP address is the only address with access to the Jump Box machine.
 
 Machines within the network can only be accessed by the Jump Box VM.
+
 - The Jump Box machine, with IP 10.0.0.4, has access to every machine within the network, including the ELK sever.
 
 A summary of the access policies in place can be found in the table below.
@@ -91,6 +93,8 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- 
+- Metricbeat collects staistics and metrics for the webserver machines. Through this data we can monitor CPU usage, memory, diskIO, and the number of docker containers per machine.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
