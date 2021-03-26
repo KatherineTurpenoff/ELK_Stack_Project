@@ -107,14 +107,17 @@ SSH into the control node and follow the steps below:
 - Copy the [.yml](/yml_Playbooks/) files to the ansible directory in /etc/.
 - Update the hosts file to include the webserver IPs and the elk server IP, this is done so the playbook will run on the correct machines. Run the following commands to edit the hosts file:
   
-  nano hosts
+ - nano hosts
+  
   Once you are within the hosts file you will need to edit the file starting at line #20. You will need to add the names of the different servers in braces and then add the corresponding private IP addresses below the names. Example provided below:
   
 [webservers]
 
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
-10.0.0.6 ansible_python_interpreter=/usr/bin/python3
-10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+
+12.0.0.6 ansible_python_interpreter=/usr/bin/python3
+
+14.0.0.7 ansible_python_interpreter=/usr/bin/python3
 
 [elk]
 
@@ -127,18 +130,18 @@ SSH into the control node and follow the steps below:
 
 Example below:
 
-nano filebeat-config.yml 
+- nano filebeat-config.yml 
+
 You can use the keyboard command control+w to search for the key words "output.elasticsearch" and "setup.kibana":
 
 Elasticsearch Example:
 
   hosts: ["10.1.0.5:9200"]
-  username: "elastic"
-  password: "changeme" 
   
  Kibana Example:
   
 setup.kibana:
+  
   host: "10.1.0.5:5601"
   
 - The metricbeat-config file is edited the same way as indicated above.
