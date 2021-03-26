@@ -145,8 +145,6 @@ You can use the keyboard command 'control+w' to search for the key words "output
   
 - Kibana Example:
   
-setup.kibana:
-  
   host: "10.1.0.5:5601"
   
 - The metricbeat-config file is edited the same way as indicated above.
