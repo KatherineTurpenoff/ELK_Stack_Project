@@ -111,11 +111,13 @@ SSH into the control node and follow the steps below:
   Once you are within the hosts file you will need to edit the file starting at line #20. You will need to add the names of the different servers in braces and then add the corresponding private IP addresses below the names. Example provided below:
   
 [webservers]
+
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 
 [elk]
+
 10.1.0.5 ansible_python_interpreter=/usr/bin/python3
 
 - Once you have edited the hosts file make sure you copy the filebeat-config and metricbeat-config files to the ansible directory as well. They are avaible in the [.yml playbook folder](/yml_Playbooks/).
