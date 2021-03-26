@@ -111,10 +111,6 @@ SSH into the control node and follow the steps below:
   Once you are within the hosts file you will need to edit the file starting at line #20. You will need to add the names of the different servers in braces and then add the corresponding private IP addresses below the names. Example provided below:
   
 [webservers]
-## alpha.example.org
-## beta.example.org
-## 192.168.1.100
-## 192.168.1.110
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
@@ -132,30 +128,16 @@ Example below:
 nano filebeat-config.yml 
 You can use the keyboard command control+w to search for the key words "output.elasticsearch" and "setup.kibana":
 
-#-------------------------- Elasticsearch output -------------------------------
-output.elasticsearch:
-  # Boolean flag to enable or disable the output module.
-  #enabled: true
+Elasticsearch Example:
 
-  # Array of hosts to connect to.
-  # Scheme and port can be left out and will be set to the default (http and 9200)
-  # In case you specify and additional path, the scheme is required: http://localhost:9200/path
-  # IPv6 addresses should always be defined as: https://[2001:db8::1]:9200
   hosts: ["10.1.0.5:9200"]
   username: "elastic"
   password: "changeme" 
   
-  #============================== Kibana =====================================
-
-# Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana A$
-# This requires a Kibana endpoint configuration.
+ Kibana Example:
+  
 setup.kibana:
   host: "10.1.0.5:5601"
-  # Kibana Host
-  # Scheme and port can be left out and will be set to the default (http and 56$
-  # In case you specify and additional path, the scheme is required: http://loc$
-  # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
-  #host: "localhost:5601"
   
 - The metricbeat-config file is edited the same way as indicated above.
 - Once both config files have been edited you may start running the playbooks that you copied to the ansible directory.
