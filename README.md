@@ -93,14 +93,14 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-- 
+- Filebeat tracks and collects system and file logs. By collecting this data, Filebeat can log all failed and accepted SSH login attempts. 
 - Metricbeat collects staistics and metrics for the webserver machines. Through this data we can monitor CPU usage, memory, diskIO, and the number of docker containers per machine.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
+- Copy the [.yml](/yml_Playbooks/)file to the ansible directory.
 - Update the _____ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
