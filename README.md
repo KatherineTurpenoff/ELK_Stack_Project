@@ -104,9 +104,9 @@ SSH into the control node and follow the steps below:
 - Locate the name of your ansible container by running: docker container list -a 
 - To activate and attach to your ansible run the following commands: 
   
-  docker start <container name>  
+  docker start (container name)  
   
-  docker attach <container name> 
+  docker attach (container name) 
   
 - Once you are in your anisible container you will need to navigate to ~/etc/ansible. 
 - Copy the [.yml](/yml_Playbooks/) files to the ansible directory in /etc/.
