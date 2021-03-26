@@ -100,13 +100,70 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the [.yml](/yml_Playbooks/) file to the ansible directory.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Locate the name of your ansible container by running: docker container list -a 
+- To activate and attach to your ansible run the following commands: docker start container (to start the container) docker attach container (to attach to the container)
+- Once you are in your anisible container you will need to navigate to ~/etc/ansible. 
+- Copy the [.yml](/yml_Playbooks/) files to the ansible directory in /etc/.
+- Update the hosts file to include the webserver IPs and the elk server IP, this is done so the playbook will run on the correct machines. Run the following commands to edit the hosts file:
+  
+  nano hosts
+  Once you are within the hosts file you will need to edit the file starting at line #20. You will need to add the names of the different servers in braces and then add the corresponding private IP addresses below the names. Example provided below:
+  
+[webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+[elk]
+10.1.0.5 ansible_python_interpreter=/usr/bin/python3
+
+- Once you have edited the hosts file make sure you copy the filebeat-config and metricbeat-config files to the ansible directory as well. They are avaible in the [.yml playbook folder](/yml_Playbooks/).
+- The config files will need editing within the "Elasticsearch output" and the "Kibana" sections. 
+- Within the "Elasticsearch output" section you will change the "hosts" to <["elk private IP:9200"]>
+- Within the "Kibana" section you will change the "hosts" to <["elk private IP:5601"]>
+
+Example below:
+
+nano filebeat-config.yml 
+Starting at line #1106 and #1806 edit the following:
+
+#-------------------------- Elasticsearch output -------------------------------
+output.elasticsearch:
+  # Boolean flag to enable or disable the output module.
+  #enabled: true
+
+  # Array of hosts to connect to.
+  # Scheme and port can be left out and will be set to the default (http and 92$
+  # In case you specify and additional path, the scheme is required: http://loc$
+  # IPv6 addresses should always be defined as: https://[2001:db8::1]:9200
+  hosts: ["10.1.0.5:9200"]
+  username: "elastic"
+  password: "changeme"
+  
+  #============================== Kibana =====================================
+
+# Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana A$
+# This requires a Kibana endpoint configuration.
+setup.kibana:
+  host: "10.1.0.5:5601"
+  # Kibana Host
+  # Scheme and port can be left out and will be set to the default (http and 56$
+  # In case you specify and additional path, the scheme is required: http://loc$
+  # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
+  #host: "localhost:5601"
+  
+- The metricbeat-config file is edited the same way as indicated above.
+- Once both config files have been edited you may start running the playbooks that you copied to the ansible directory.
+
+The following commands will run each playbook:
+  
+  ansible-playbook install-elk.yml
+  ansible-playbook filebeat-playbook.yml
+  ansible-playbook metricbeat-playbook.yml
+
+- After running each playbook, navigate to http://<Elk-Server PublicIP>:5601/app/kibana to check that the installation worked as expected.
