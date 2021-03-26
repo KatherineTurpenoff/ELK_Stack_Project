@@ -102,7 +102,12 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 
 - Locate the name of your ansible container by running: docker container list -a 
-- To activate and attach to your ansible run the following commands: docker start container (to start the container) docker attach container (to attach to the container)
+- To activate and attach to your ansible run the following commands: 
+  
+  docker start <container name>  
+  
+  docker attach <container name> 
+  
 - Once you are in your anisible container you will need to navigate to ~/etc/ansible. 
 - Copy the [.yml](/yml_Playbooks/) files to the ansible directory in /etc/.
 - Update the hosts file to include the webserver IPs and the elk server IP, this is done so the playbook will run on the correct machines. Run the following commands to edit the hosts file:
