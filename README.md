@@ -156,7 +156,8 @@ You can use the keyboard command 'control+w' to search for the key words "output
 
 The following commands will run each playbook:
   
-  - ansible-playbook install-elk.yml
+  - ansible-playbook docker-playbook.yml
+  - ansible-playbook elk-playbook.yml
   - ansible-playbook filebeat-playbook.yml
   - ansible-playbook metricbeat-playbook.yml
 
