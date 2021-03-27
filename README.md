@@ -110,7 +110,7 @@ SSH into the control node and follow the steps below:
   
 - Once you are in your anisible container you will need to navigate to ~/etc/ansible. 
 - Copy the [.yml](/yml_Playbooks/) files to the ansible directory in /etc/.
-- Update the hosts file to include the webserver IPs and the elk server IP, this is done so the playbook will run on the correct machines. Run the following commands to edit the hosts file:
+- Update the hosts file to include the webserver IPs and the elk server IP, this is done so the playbook will run on the correct machines. Run the following command to edit the hosts file:
   
  - nano hosts
   
