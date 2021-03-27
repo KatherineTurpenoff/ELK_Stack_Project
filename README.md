@@ -114,21 +114,25 @@ SSH into the control node and follow the steps below:
   
  - nano hosts
   
-  Once you are within the hosts file you will need to edit the file starting at line #20. You will need to add the names of the different servers in braces and then add the corresponding private IP addresses below the names. Example provided below:
+  Once you are within the hosts file you will need to edit the file starting at line #20. You will need to add the names of the different servers in braces and       then add the corresponding private IP addresses below the names. Example provided below:
   
-[webservers]
+  [webservers]
 
-10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+  10.0.0.5 ansible_python_interpreter=/usr/bin/python3
 
-12.0.0.6 ansible_python_interpreter=/usr/bin/python3
+  12.0.0.6 ansible_python_interpreter=/usr/bin/python3
 
-14.0.0.7 ansible_python_interpreter=/usr/bin/python3
+  14.0.0.7 ansible_python_interpreter=/usr/bin/python3
 
-[elk]
+  [elk]
 
-10.1.0.5 ansible_python_interpreter=/usr/bin/python3
+  10.1.0.5 ansible_python_interpreter=/usr/bin/python3
 
-- Once you have edited the hosts file make sure you copy the filebeat-config and metricbeat-config files to the ansible directory as well. They are avaible in the [.yml playbook folder](/yml_Playbooks/).
+- After editing the hosts file, you will need to create a connection to the webservers and elk server by SSHing into every machine. This will establish a connection from ansible to each virtual machine.
+
+  ssh (username)@10.0.0.5
+
+- After creating a connection to each machine, make sure you copy the filebeat-config and metricbeat-config files to the ansible directory as well. They are avaible in the [.yml playbook folder](/yml_Playbooks/).
 - The config files will need editing within the "Elasticsearch output" and the "Kibana" sections. 
 - Within the "Elasticsearch output" section you will change the "hosts" to <["elk private IP:9200"]>
 - Within the "Kibana" section you will change the "hosts" to <["elk private IP:5601"]>
