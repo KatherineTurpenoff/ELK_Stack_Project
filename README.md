@@ -69,7 +69,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 - The automated configuration is ideal because it minimalizes the chance of errors and impliments the configuration at a faster pace. Going forward, the preconfigured files can also be easily edited with future updates.
 
-The [playbook](/yml_Playbook/elk-playbook.yml) implements the following tasks:
+The [playbook](/yml_Playbooks/elk-playbook.yml) implements the following tasks:
 - First Task: install docker.io
 - Second Task: install python3
 - Third Task: install docker module
