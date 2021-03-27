@@ -149,7 +149,7 @@ You can use the keyboard command 'control+w' to search for the key words "output
   
 - Kibana Example:
   
-  host: "10.1.0.5:5601"
+  host: ["10.1.0.5:5601"]
   
 - The metricbeat-config file is edited the same way as indicated above.
 - Once both config files have been edited you may start running the playbooks that you copied to the ansible directory.
