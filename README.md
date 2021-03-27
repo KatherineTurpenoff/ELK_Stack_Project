@@ -73,9 +73,9 @@ The [elk-playbook](/yml_Playbooks/elk-playbook.yml) implements the following tas
 - First Task: install docker.io
 - Second Task: install python3
 - Third Task: install docker module
-- Fourth Task: increase the virtual memory
-- Fifth Task: download and launch the docker ELK container
-- Sixth Task: docker on boot (this command makes sure that docker is automatically started everytime the webservers are booted up)
+- Fourth/Fifth Tasks: increase the virtual memory
+- Sixth Task: download and launch the docker ELK container
+- Seventh Task: docker on boot (this command makes sure that docker is automatically started everytime the webservers are booted up)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
