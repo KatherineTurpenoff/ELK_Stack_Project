@@ -132,7 +132,7 @@ SSH into the control node and follow the steps below:
 
   ssh (username)@10.0.0.5
 
-- After creating a connection to each machine, make sure you copy the filebeat-config and metricbeat-config files to the ansible directory as well. They are avaible in the [.yml playbook folder](/yml_Playbooks/).
+- After creating a connection to each machine, make sure you copy the [filebeat-config](/yml_Playbooks/Filebeat_and_Metricbeat_Config_files/filebeat-config.yml) and [metricbeat-config](/yml_Playbooks/Filebeat_and_Metricbeat_Config_files/metricbeat-config.yml) files to the ansible directory as well. 
 - The config files will need editing within the "Elasticsearch output" and the "Kibana" sections. 
 - Within the "Elasticsearch output" section you will change the "hosts" to <["elk private IP:9200"]>
 - Within the "Kibana" section you will change the "hosts" to <["elk private IP:5601"]>
